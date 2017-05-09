@@ -1675,6 +1675,7 @@
     invoke-static {v4, v5}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     new-instance v73, Lcom/android/server/FlymeExtLockSettingsService;
+
     move-object/from16 v0, v73
 
     invoke-direct {v0, v3}, Lcom/android/server/FlymeExtLockSettingsService;-><init>(Landroid/content/Context;)V
@@ -2789,14 +2790,13 @@
     invoke-virtual {v4, v5}, Lcom/android/server/SystemServiceManager;->startService(Ljava/lang/Class;)Lcom/android/server/SystemService;
 
     :cond_1c
-
+    goto/16 :goto_flyme_0
     if-nez v54, :cond_1d
 
     if-eqz v49, :cond_31
 
     .end local v33    # "atlas":Lcom/android/server/AssetAtlasService;
     :cond_1d
-
     :goto_26
     if-nez v54, :cond_1e
 
@@ -2854,6 +2854,7 @@
 
     .end local v63    # "gestureService":Lcom/android/server/gesture/GestureService;
     :cond_1f
+    :goto_flyme_0
     :goto_27
     move-object/from16 v0, p0
 
@@ -4093,6 +4094,7 @@
 
     .end local v59    # "e":Ljava/lang/Throwable;
     :cond_31
+    
     :try_start_46
     const-string v4, "SystemServer"
 
